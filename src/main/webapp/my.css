@@ -1,0 +1,146 @@
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+a[href="add.html"] {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+section {
+    margin: 20px;
+}
+
+li {
+    list-style: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+li img {
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+li span {
+    font-size: 14px;
+    color: #777;
+}
+
+li button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+li button:hover {
+    background-color: #d32f2f;
+}
+
+footer {
+    text-align: center;
+}
+.add-button {
+    background-color: #007bff; 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin : 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+
+}
+
+.add-button:hover {
+    background-color: #0056b3; 
+}
+
+.bt {
+    text-align: center;
+    position: relative;
+    top : 20px;
+}
+
+@media (max-width: 768px) {
+    li img {
+        width: 15%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    li button {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    a[href="add.html"] {
+        margin-left: 10px;
+    }
+
+    li {
+        padding: 5px;
+    }
+
+    li img {
+        width: 20%;
+    }
+
+    li a {
+        font-size: 16px;
+    }
+
+    li span {
+        font-size: 12px;
+    }
+
+    li button {
+        font-size: 10px;
+        padding: 2px 5px;
+        margin-left: 5px;
+    }
+}
+
