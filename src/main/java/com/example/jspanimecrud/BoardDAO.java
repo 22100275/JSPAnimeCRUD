@@ -1,14 +1,22 @@
 package com.example.jspanimecrud;
 
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.example.jspanimecrud.BoardVO;
 import com.example.jspanimecrud.JDBCUtil;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.example.jspanimecrud.*;
+import java.io.File;
+
+import javax.servlet.http.HttpServletRequest;
 
 public class BoardDAO {
 	
@@ -139,4 +147,24 @@ public class BoardDAO {
 		} 
 		return list;
 	}
+
+	public String getPhotoFilename(int no) {
+		String filename = null;
+		try {
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(BOARD_LIST);
+			stmt.setInt(1, no);
+			rs = stmt.executeQuery();
+
+			if(rs.next()) {
+				filename = rs.getString("img");
+			}
+			rs.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return filename;
+	}
+
+
 }

@@ -19,7 +19,7 @@
 </header>
 
 <section class="container mt-5">
-    <form action="addpost.jsp" id="addForm" method="post">
+    <form action="addpost.jsp" id="addForm" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label">애니메이션 이름:</label>
             <input type="text" name="name" class="form-control">
@@ -49,8 +49,8 @@
             <input type="text" name="director" class="form-control">
         </div>
         <div class="mb-3">
-            <label class="form-label">이미지(링크):</label>
-            <input type="text" name="img" class="form-control">
+            <label class="form-label">이미지:</label>
+            <input type="file" name="img" class="form-control">
         </div>
         <div class="bt">
             <button type="submit" class="btn btn-primary">추가</button>

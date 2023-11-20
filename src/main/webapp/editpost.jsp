@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.example.jspanimecrud.BoardDAO"%>
+<%@page import="com.example.jspanimecrud.BoardVO"%>
 
 <% request.setCharacterEncoding("utf-8"); %>
+<%@ page import="com.example.jspanimecrud.FileUpload"%>
 
-<jsp:useBean id="u" class="com.example.jspanimecrud.BoardVO" />
-<jsp:setProperty property="*" name="u"/>
 
 <%
+	request.setCharacterEncoding("utf-8");
 	BoardDAO boardDAO = new BoardDAO();
-	int i=boardDAO.updateBoard(u);
+	FileUpload upload = new FileUpload();
+	BoardVO u = upload.uploadPhoto(request);
+	int i = boardDAO.updateBoard(u);
 	String msg = "데이터 추가 성공 !";
-	if(i == 0) {
-		msg = "[에러] 데이터 추가 ";
-	}
-	response.sendRedirect("posts.jsp");
+	if(i == 0) msg = "[에러] 데이터 추가 ";
 %>
 
 <script>

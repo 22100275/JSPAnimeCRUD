@@ -43,6 +43,9 @@
             int pg = selectedItem.getPg();
             int rating = selectedItem.getRating();
             int no = Integer.parseInt(noParam);
+
+            request.setAttribute("vo", selectedItem);
+
         %>
     </div>
 </header>
@@ -50,7 +53,7 @@
 <section class="container my-4">
     <div class="row">
         <div class="col-md-4">
-            <img src="<%=img%>" alt="konosuba" class="img-fluid">
+            <img src="${pageContext.request.contextPath}/upload/<%=img%>" alt="konosuba" class="img-fluid">
         </div>
         <div class="col-md-8">
             <h2><%=name%></h2>

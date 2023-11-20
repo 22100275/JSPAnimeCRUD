@@ -58,7 +58,7 @@
 </header>
 
 <section class="container mt-5">
-	<form action="editpost.jsp" id="addForm" method="post">
+	<form action="editpost.jsp" id="addForm" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="no" value="<%=u.getNo()%>"/>
 		<div class="mb-3">
 			<label class="form-label">애니메이션 이름:</label>
@@ -89,8 +89,8 @@
 			<input type="text" name="director" class="form-control" value="<%=u.getDirector()%>">
 		</div>
 		<div class="mb-3">
-			<label class="form-label">이미지(링크):</label>
-			<input type="text" name="img" class="form-control" value="<%=u.getImg()%>">
+			<label class="form-label">이미지:</label>
+			<input type="file" name="img" class="form-control" value="<%=u.getImg()%>">
 		</div>
 		<div class="bt">
 			<button type="submit" class="btn btn-primary">수정</button>
